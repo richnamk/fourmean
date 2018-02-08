@@ -44,11 +44,11 @@ export class PollSurveyComponent implements OnInit {
       }
     );
   }
-  incrementValue() {
-    var value = parseInt(document.getElementById('number').count, 0);
-    value = isNaN(value) ? 0 : value;
-    value++;
-    document.getElementById('number').count = value;
-  } 
+  // incrementValue() {
+  //   var value = parseInt(document.getElementById('number').count, 0);
+  //   value = isNaN(value) ? 0 : value;
+  //   value++;
+  //   document.getElementById('number').count = value;
+  // } 
   // I tried... ugh....
 }
