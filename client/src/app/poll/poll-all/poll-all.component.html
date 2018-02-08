@@ -1,0 +1,77 @@
+<app-user-logout></app-user-logout>
+<a [routerLink]="['/dashboard']">Cancel</a>
+
+<div>
+  <h3>put the questions and options here:</h3>
+<br>
+  <form 
+    (submit)="onSubmit();" 
+    #createForm="ngForm"
+  >
+    <table>
+      <tr>
+        <td><label>question:</label></td>
+        <td><input 
+          type="text" 
+          name="question"
+          required
+          minlength="8"
+          [(ngModel)]="poll.question"
+          #question="ngModel" 
+        ></td>
+        <td>{{ question.errors | json }}</td>
+      </tr>
+      <tr>
+        <td><label>option 1:</label></td>
+        <td><input 
+          type="text" 
+          name="option1"
+          required
+          minlength="3"
+          [(ngModel)]="poll.option1"
+          #option1="ngModel" 
+        ></td>
+        <td>{{ option1.errors | json }}</td>
+      </tr>
+      <tr>
+        <td><label>option 2:</label></td>
+        <td><input 
+          type="text" 
+          name="option2"
+          required
+          minlength="3"
+          [(ngModel)]="poll.option2"
+          #option2="ngModel" 
+        ></td>
+        <td>{{ option2.errors | json }}</td>
+      </tr>
+      <tr>
+        <td><label>option 3:</label></td>
+        <td><input 
+          type="text" 
+          name="option3"
+          required
+          minlength="3"
+          [(ngModel)]="poll.option3"
+          #option3="ngModel" 
+        ></td>
+        <td>{{ option3.errors | json }}</td>
+      </tr>
+      <tr>
+        <td><label>option 4:</label></td>
+        <td><input 
+          type="text" 
+          name="option4"
+          required
+          minlength="3"
+          [(ngModel)]="poll.option4"
+          #option4="ngModel" 
+        ></td>
+        <td>{{ option4.errors | json }}</td>
+      </tr>
+      <tr>
+        <td><button type="submit">Submit</button></td>
+      </tr>
+    </table>
+  </form>
+</div>

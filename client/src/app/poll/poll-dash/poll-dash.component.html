@@ -1,0 +1,32 @@
+<app-user-logout></app-user-logout>
+<a [routerLink]="['/poll', 'all']">create a new poll</a> 
+
+<h3>current polls</h3>
+<br>
+<table>
+  <thead>
+    <th>name</th>
+    <th>survey question</th>
+    <th>date posted</th>
+    <th>action</th>
+  </thead>
+
+  <tr
+    *ngFor=" let poll of polls "
+  >
+    <td>{{ poll._user.name }}</td>
+    <td>
+      <a [routerLink]="['/poll', poll._id]">{{ poll.question }}</a>
+    </td>
+    <td>{{ poll.createdAt | date:'mediumDate'}}</td>
+    <td
+      *ngIf=" poll._user.name == user.name"
+    ><button
+      (click)="delete(poll._id)"
+
+    >Delete</button></td>
+    <td
+      *ngIf=" poll._user.name != user.name"
+    ></td>
+  </tr>
+</table>

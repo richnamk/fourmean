@@ -1,0 +1,41 @@
+<app-user-logout></app-user-logout>
+<a [routerLink]="['/dashboard']">Go Back to Polls</a>
+
+<h3>{{ questPoll.question }}</h3>
+<p>click the vote button to choose one</p>
+
+<table>
+  <thead>
+    <th>Option</th>
+    <th>count of votes</th>
+    <th>Action</th>
+  </thead>
+  <tr>
+    <td>{{ questPoll.option1 }}</td>
+    <td></td>
+    <td><button
+        (click)=(questPoll.option1)
+      >vote</button></td>
+  </tr>
+  <tr>
+    <td>{{ questPoll.option2 }}</td>
+    <td></td>
+    <td><button
+        (click)=(questPoll.option2)
+      >vote</button></td>
+  </tr>
+  <tr>
+    <td>{{ questPoll.option3 }}</td>
+    <td></td>
+    <td><button
+      (click)=(questPoll.option3)
+    >vote</button></td>
+  </tr>
+  <tr>
+    <td>{{ questPoll.option4 }}</td>
+    <input type="text" id="number" value="0"/>
+    <td><input id="count"
+      type="button" onclick="incrementValue()" value="vote"
+    ></td>
+  </tr>
+</table>
